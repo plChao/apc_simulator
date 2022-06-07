@@ -2,11 +2,12 @@ const logger = require('./logger')('MONGODB');
 // const MongoClient = require('mongodb').MongoClient;
 const dbConfig = require('config').db;
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const connection = dbConfig.url || process.env.DB_SERVER;
+const connection = dbConfig.url || process.env.DB_SERVER_CONNECTION;
 logger.info(`db-server connection: ${connection}`);
 const client = new MongoClient(connection, { useNewUrlParser: true,
                                              useUnifiedTopology: true,
                                              serverApi: ServerApiVersion.v1 });
+// const client = new MongoClient(connection);
 
 let db = undefined;
 
