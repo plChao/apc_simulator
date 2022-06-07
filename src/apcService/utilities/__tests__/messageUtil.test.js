@@ -57,6 +57,16 @@ describe('Module messageUtil', () => {
     let result = natsMessageHandler();
     expect(result).toBeUndefined();
   });
+
+  // it('DB null', async ()=> {
+  //   // mock empty dbConfig
+  //   mDbConfig = jest.fn().mockReturnValue(null)
+  //   db.connect(dbConfig = mDbConfig)
+  //   let result = natsMessageHandler();
+  //   console.log(conn.dbConfig)
+  //   expect(result).toBeUndefined();
+  //   // expect().toBeUndefined();
+  // });
   
 });
 
