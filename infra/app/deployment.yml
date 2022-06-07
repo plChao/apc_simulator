@@ -24,4 +24,4 @@ spec:
             - name: NATS_SERVICE_CONNECTION
               value: 'nats-server:4222'
             - name: DB_SERVER
-              value: 'mongodb-svc'
+              value: 'mongodb-svc:27017'
