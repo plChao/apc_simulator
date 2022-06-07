@@ -1,5 +1,5 @@
 // Ref: https://stackoverflow.com/questions/64051580/how-to-test-express-router-catch-branch-in-this-scenario-using-jest
-const db = require('../../../utilities/db')
+const db = require('../../../utilities/mongodb')
 beforeAll(async () => {
     db.connect();
     await new Promise(r => setTimeout(r, 3000));
