@@ -23,7 +23,7 @@ module.exports = {
   db: {
     // url: 'mongodb://localhost:27017/',
     // url: 'mongodb+srv://sandy:sandy0123@cluster0.s6fz0.mongodb.net/?retryWrites=true&w=majority',
-    url: process.env.DB_SERVER,
+    url: process.env.DB_SERVER_CONNECTION,
     dbName: 'apcDB',
     initValue: {
       FACTOR_THICKNESS: 0.5,
