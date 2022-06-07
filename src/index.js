@@ -11,7 +11,7 @@ const NATSClient = require('./utilities/natsClient');
 const measureService = require('./measureService');
 const apcService = require('./apcService');
 const paramsService = require('./paramsService');
-const db = require('./utilities/db');
+const db = require('./utilities/mongodb');
 
 let measureHandle = null;
 let paramsHandle = null;

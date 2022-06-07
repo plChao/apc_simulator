@@ -46,19 +46,24 @@ jobs:
           --build-arg GITHUB_SHA="$GITHUB_SHA" \
           --build-arg GITHUB_REF="$GITHUB_REF" \
           .
-    # - name: Test
-    #   run: |-
-    #     docker run "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA" npm test -- --coverage
-    # # Push the Docker image to Google Container Registry
+    - name: Test
+      run: |-
+        docker run "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA" npm test -- --coverage
+    # Push the Docker image to Google Container Registry
     - name: Publish
       run: |-
         docker push "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA"
     # Deploy the Docker image to the GKE cluster
+    # - name: Deploy-db
+    #   run: |-
+    #     cd ./infra/db
+    #     kubectl apply -f mongo_pod.yml
+    #     kubectl apply -f service.yml
     - name: Deploy-nat
       run: |-
-        cd ./infra
-        kubectl apply -f nats/deployment.yml
-        kubectl apply -f nats/service.yml
+        cd ./infra/nats
+        kubectl apply -f deployment.yml
+        kubectl apply -f service.yml
         kubectl rollout status deployment/nats-server
         kubectl get services -o wide
     - name: Deploy-apc

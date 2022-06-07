@@ -1,6 +1,6 @@
 const logger = require('../../utilities/logger')('APC_SERVICE');
 
-const db = require('../../utilities/db');
+const db = require('../../utilities/mongodb');
 
 const natsMessageHandler = (message) => {
   const factors = db.getCollection('factors');

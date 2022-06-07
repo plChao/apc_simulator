@@ -1,5 +1,5 @@
 const { natsMessageHandler } = require('../messageUtil');
-const db = require('../../../utilities/db')
+const db = require('../../../utilities/mongodb')
 
 beforeAll(async () => {
   db.connect();
